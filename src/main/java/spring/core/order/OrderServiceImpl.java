@@ -13,7 +13,7 @@ import spring.core.member.MemberRepository;
  */
 public class OrderServiceImpl implements OrderService {
 
-    // new 생성자가 없음, 인터페이스에만 의존적임
+    // new 생성자가 없음, 인터페이스에만 의존적임 (DIP 의존관계 역전 원칙을 지킴)
     private final MemberRepository memberRepository;
 
     // DIP 문제 해결방법: 인터페이스에만 의존하도록 의존관계를 변경

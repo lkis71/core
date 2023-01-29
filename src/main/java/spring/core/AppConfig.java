@@ -22,8 +22,9 @@ import spring.core.order.OrderServiceImpl;
  * 구현체(ServiceImpl)에서는 인터페이스에만 의존하고 있다.
  * 의존관계를 마치 외부에서 주입해주는 것 같다고 해서 DI(Dependency Injection) 우리말로 의존관계 주입 또는 의존성 주입이라 한다.
  *
- *
  * AppConfig의 등장으로 OCP, DIP를 해결함
+ *  -> 구현 객체를 대신 주입하고 있어 DIP 의존관계역전원칙을 지킴
+ *  -> 사용영역과 구성영역을 분리하여 OCP 개방폐쇄원칙을 지킴 -> 구성영역에서만 변경하고 사용영역에서는 변경을 하지 않아도 됨
  */
 public class AppConfig {
 
