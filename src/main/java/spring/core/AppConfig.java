@@ -9,15 +9,24 @@ import spring.core.member.MemoryMemberRepository;
 import spring.core.order.OrderService;
 import spring.core.order.OrderServiceImpl;
 
-// 1.
-// 애플리케이션 전체를 설정하고 구성한다.
-// 구현 객체를 생성한다.
-// 생성한 객체 인스턴스의 참조를 생성자를 통해 주입(Injection)한다.
+/**
+ * AppConfig 란
+ * 애플리케이션 전체를 설정하고 구성하는 역할을 한다.
+ * 생성한 객체 인스턴스의 참조(구현체)를 생성자를 통해 주입(Injection)한다.
+ * 구현체를 직접 선택하여 주입한다.
+ *
+ * 등장으로 크게 사용영역(Service)과 구성영역(AppConfig)으로 분리되고 있다.
+ * 구현체가 변경되어도 구성영역에서만 변경하면 된다.
+ * 사용영역에서는 어떤 코드도 변경할 필요가 없다.
+ *
+ * 구현체(ServiceImpl)에서는 인터페이스에만 의존하고 있다.
+ * 의존관계를 마치 외부에서 주입해주는 것 같다고 해서 DI(Dependency Injection) 우리말로 의존관계 주입 또는 의존성 주입이라 한다.
+ *
+ *
+ * AppConfig의 등장으로 OCP, DIP를 해결함
+ */
 public class AppConfig {
 
-    // 2.
-    // 역할과 구현 클래스가 한눈에 들어온다.
-    // 애플리케이션 전체 구성이 어떻게 되어있는지 파악하기 쉬움
     public MemberService memberService() {
         // 생성자 주입
         return new MemberServiceImpl(memberRepository());
@@ -37,12 +46,3 @@ public class AppConfig {
         return new RateDiscountPolicy();
     }
 }
-
-// 중요!!
-// 인터페이스의 구현체를 생성하여 생성자 주입함.
-// 구현체에서는 인터페이스에만 의존하고, 인터페이스의 의존관계를 AppConfig에서 구현체에 생성자를 주입시킴
-// 의존관계를 마치 외부에서 주입해주는 것 같다고 해서 DI(Dependency Injection) 우리말로 의존관계 주입이라 한다.
-// 구현체를 AppConfig가 직접 선택함
-
-// AppConfig의 등장으로 크게 사용영역(Service)과 구성 영역(AppConfig)으로 분리됨
-// 구현체가 변경되어도 구성 영역의 주입만 바꾸면 됨, 사용영역의 어떤 코드도 변경할 필요 없음
