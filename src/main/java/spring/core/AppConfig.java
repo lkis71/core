@@ -1,5 +1,7 @@
 package spring.core;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import spring.core.discount.DiscountPolicy;
 import spring.core.discount.RateDiscountPolicy;
 import spring.core.member.MemberRepository;
@@ -26,24 +28,39 @@ import spring.core.order.OrderServiceImpl;
  *  -> 구현 객체를 대신 주입하고 있어 DIP 의존관계역전원칙을 지킴
  *  -> 사용영역과 구성영역을 분리하여 OCP 개방폐쇄원칙을 지킴 -> 구성영역에서만 변경하고 사용영역에서는 변경을 하지 않아도 됨
  */
+@Configuration
 public class AppConfig {
 
+    /**
+     * Bean이란?
+     * 애플리케이션 실행 시 스프링 컨테이너에 등록됨
+     */
+    @Bean
     public MemberService memberService() {
         // 생성자 주입
         return new MemberServiceImpl(memberRepository());
     }
 
-    private MemberRepository memberRepository() {
+    @Bean
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
+    @Bean
     public OrderService orderService() {
         // 생성자 주입
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    @Bean
     public DiscountPolicy discountPolicy() {
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
 }
+
+/**
+ * 스프링 컨테이너 생성과정
+ *
+ * 	스프링 컨테이너 생성(AppConfig.class) -> 스프링 컨테이너	 -> 스프링 빈 저장소
+ */
