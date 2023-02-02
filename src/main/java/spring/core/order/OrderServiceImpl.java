@@ -1,5 +1,7 @@
 package spring.core.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import spring.core.discount.DiscountPolicy;
 import spring.core.member.Member;
 import spring.core.member.MemberRepository;
@@ -11,7 +13,9 @@ import spring.core.member.MemberRepository;
  * OrderServiceImpl의 생성자를 통해서 어떤 구현 객체를 주입할지는 오직 외부에서 결정됨
  * OrderServiceImpl은 실행에만 집중함
  */
+@Component
 public class OrderServiceImpl implements OrderService {
+
 
     /**
      * 제어의 역전(IOC), 의존관계 주입(DI)
@@ -24,12 +28,12 @@ public class OrderServiceImpl implements OrderService {
      */
     // new 생성자가 없음, 인터페이스에만 의존적임 (DIP 의존관계 역전 원칙을 지킴)
     private final MemberRepository memberRepository;
-
     // DIP 문제 해결방법: 인터페이스에만 의존하도록 의존관계를 변경
     // 누군가 구현클래스를 대신 생성해주고 주입해야함
     // 관심사를 분리하자, 역할은 역할에만 구현은 구현만 하도록 책임을 확실히 분리하자.
     private final DiscountPolicy discountPolicy;
-    
+
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
@@ -43,6 +47,11 @@ public class OrderServiceImpl implements OrderService {
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    //테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
 

@@ -31,29 +31,37 @@ import spring.core.order.OrderServiceImpl;
 @Configuration
 public class AppConfig {
 
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+    //
+
     /**
      * Bean이란?
      * 애플리케이션 실행 시 스프링 컨테이너에 등록됨
      */
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         // 생성자 주입
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         // 생성자 주입
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy() {
+        System.out.println("AppConfig.discountPolicy");
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
