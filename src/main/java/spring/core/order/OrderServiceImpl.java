@@ -16,7 +16,6 @@ import spring.core.member.MemberRepository;
 @Component
 public class OrderServiceImpl implements OrderService {
 
-
     /**
      * 제어의 역전(IOC), 의존관계 주입(DI)
      * 인터페이스에만 의존하고 의존관계 주입은 AppConfig에서 처리함
@@ -27,14 +26,21 @@ public class OrderServiceImpl implements OrderService {
      *      오직 외부에서 의존관계를 주입한다.(동적인 객체 인스턴스 의존관계를 쉽게 변경한다.)
      */
     // new 생성자가 없음, 인터페이스에만 의존적임 (DIP 의존관계 역전 원칙을 지킴)
-    private final MemberRepository memberRepository;
+    @Autowired
+    private MemberRepository memberRepository;
     // DIP 문제 해결방법: 인터페이스에만 의존하도록 의존관계를 변경
     // 누군가 구현클래스를 대신 생성해주고 주입해야함
     // 관심사를 분리하자, 역할은 역할에만 구현은 구현만 하도록 책임을 확실히 분리하자.
-    private final DiscountPolicy discountPolicy;
+    @Autowired
+    private DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
