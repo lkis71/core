@@ -31,10 +31,6 @@ import spring.core.order.OrderServiceImpl;
 @Configuration
 public class AppConfig {
 
-    //@Bean memberService -> new MemoryMemberRepository()
-    //@Bean orderService -> new MemoryMemberRepository()
-    //
-
     /**
      * Bean이란?
      * 애플리케이션 실행 시 스프링 컨테이너에 등록됨
@@ -57,6 +53,7 @@ public class AppConfig {
         System.out.println("call AppConfig.orderService");
         // 생성자 주입
         return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return null;
     }
 
     @Bean
@@ -66,9 +63,3 @@ public class AppConfig {
         return new RateDiscountPolicy();
     }
 }
-
-/**
- * 스프링 컨테이너 생성과정
- *
- * 	스프링 컨테이너 생성(AppConfig.class) -> 스프링 컨테이너	 -> 스프링 빈 저장소
- */
