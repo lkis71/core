@@ -60,6 +60,11 @@
         -> 책임을 클라이언트에 있다.
         -> @PreDestroy 같은 종료 메서드가 호출되지 않는다.
     - 웹관련 스코프
-        -> request: 웹 요청이 들어오고 나갈때 까지 유지되는 스코프
+        -> request: 웹 요청(HTTP)이 들어오고 나갈때 까지 유지되는 스코프
         -> session: 웹 세션이 생성되고 종료될때 까지 유지되는 스코프
         -> application: 웹의 서블릿 컨텍스트와 같은 범위로 유지되는 스코프
+
+7. 웹 라이브러리
+    - 웹 라이브러리가 없으면 AnnotationConfigApplicationContext를 기반으로 애플리케이션을 구동한다.
+    - 웹 라이브러리가 추가되면 AnnotationConfigServletWebServerApplicationContext를 기반으로 애플리케이션을 구동한다.
+        -> 웹 관련 추가 기능이 필요
