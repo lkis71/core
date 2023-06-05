@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-06-05T08:11:23.483Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="z1drFvgTqOCcf8AuUYha" version="21.3.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-05T08:13:46.480Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="bFlybbW6v1F6qwIG5zp_" version="21.3.6" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1126" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="01pdAstRpcWBPZy4aj-u-16" value="폰트" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="01pdAstRpcWBPZy4aj-u-16" value="FILTER_FONT_T" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="85" y="710" width="250" height="240" as="geometry" />
         </mxCell>
         <mxCell id="01pdAstRpcWBPZy4aj-u-17" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="01pdAstRpcWBPZy4aj-u-16" vertex="1">
@@ -64,7 +64,7 @@
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UBYgIPm7hl8xzXy8lDwF-1" value="필터 정책" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="UBYgIPm7hl8xzXy8lDwF-1" value="POLICY_T" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="480" y="140" width="250" height="90" as="geometry" />
         </mxCell>
         <mxCell id="UBYgIPm7hl8xzXy8lDwF-2" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="UBYgIPm7hl8xzXy8lDwF-1" vertex="1">
@@ -141,7 +141,7 @@
             <mxPoint x="730" y="529" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UBYgIPm7hl8xzXy8lDwF-18" value="폰트 정책" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="UBYgIPm7hl8xzXy8lDwF-18" value="FILTER_FONT_POLICY" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="470" y="710" width="250" height="240" as="geometry" />
         </mxCell>
         <mxCell id="UBYgIPm7hl8xzXy8lDwF-19" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="UBYgIPm7hl8xzXy8lDwF-18" vertex="1">
@@ -207,7 +207,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UBYgIPm7hl8xzXy8lDwF-33" value="폰트 카테고리" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="UBYgIPm7hl8xzXy8lDwF-33" value="FILTER_FONT_CAREGORY_T" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="85" y="365" width="250" height="180" as="geometry" />
         </mxCell>
         <mxCell id="UBYgIPm7hl8xzXy8lDwF-34" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="UBYgIPm7hl8xzXy8lDwF-33" vertex="1">
@@ -289,7 +289,7 @@
             <mxPoint x="470" y="840" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_hp9VD91Weo4h_nXnL5X-2" value="폰트 카테고리 정책" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="_hp9VD91Weo4h_nXnL5X-2" value="FILTER_FONT_CATEGORY_POLICY" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="320" width="250" height="270" as="geometry" />
         </mxCell>
         <mxCell id="_hp9VD91Weo4h_nXnL5X-3" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" vertex="1" parent="_hp9VD91Weo4h_nXnL5X-2">
